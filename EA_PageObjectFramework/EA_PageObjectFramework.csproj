@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="..\packages\NUnit.3.10.1\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{208A4459-FA2E-4705-8407-5B23EB7AC1AD}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EA_PageObjectFramework</RootNamespace>
+    <AssemblyName>EA_PageObjectFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.10.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.10.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.11.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.11.2\lib\net45\WebDriver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.11.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.11.2\lib\net45\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EA_Admin\PageActions\AdminLoginAction.cs" />
+    <Compile Include="EA_Admin\PageActions\Common.cs" />
+    <Compile Include="EA_Admin\PageObjects\LoginPage.cs" />
+    <Compile Include="EA_Admin\PageObjects\ProductSizePage.cs" />
+    <Compile Include="EA_Admin\PageObjects\ProductsPage.cs" />
+    <Compile Include="EA_Desktop\Desktop_PageActions\Desktop_ArrangementUpgradePageAction.cs" />
+    <Compile Include="EA_Desktop\Desktop_PageActions\Desktop_FruitArrangementsPageActions.cs" />
+    <Compile Include="EA_Desktop\Desktop_PageActions\Desktop_FruitArrgDetailPageAction.cs" />
+    <Compile Include="EA_Desktop\Desktop_PageActions\Desktop_FruitCartPageAction.cs" />
+    <Compile Include="EA_Desktop\Desktop_PageActions\Desktop_HomePageAction.cs" />
+    <Compile Include="EA_Desktop\Desktop_PageActions\Desktop_OrderFormPageAction.cs" />
+    <Compile Include="EA_Desktop\Desktop_PageActions\Desktop_SmartDivAction.cs" />
+    <Compile Include="EA_Desktop\Desktop_PageObjects\Desktop_ArrangementUpgradePage.cs" />
+    <Compile Include="EA_Desktop\Desktop_PageObjects\Desktop_FruitArrangementsPage.cs" />
+    <Compile Include="EA_Desktop\Desktop_PageObjects\Desktop_FruitArrgDetailPage.cs" />
+    <Compile Include="EA_Desktop\Desktop_PageObjects\Desktop_FruitCartPage.cs" />
+    <Compile Include="EA_Desktop\Desktop_PageObjects\Desktop_HomePage.cs" />
+    <Compile Include="EA_Desktop\Desktop_PageObjects\Desktop_OrderFormPage.cs" />
+    <Compile Include="EA_Desktop\Desktop_PageObjects\Desktop_SmartDiv.cs" />
+    <Compile Include="EA_Mobile\PageActions\ArrangementAddonPage_ActionClass.cs" />
+    <Compile Include="EA_Mobile\PageActions\ArrangementDetailPage_ActionClass.cs" />
+    <Compile Include="EA_Mobile\PageActions\ArrgObject.cs" />
+    <Compile Include="EA_Mobile\PageActions\ConfirmationPage_ActionClass.cs" />
+    <Compile Include="EA_Mobile\PageActions\ContinueShoppingDiv_ActionClass.cs" />
+    <Compile Include="EA_Mobile\PageActions\CreateProfilePage_ActionClass.cs" />
+    <Compile Include="EA_Mobile\PageActions\FruitArrangementPage_ActionClass.cs" />
+    <Compile Include="EA_Mobile\PageActions\FruitCartPage_ActionClass.cs" />
+    <Compile Include="EA_Mobile\PageActions\HeaderPage_ActionClass.cs" />
+    <Compile Include="EA_Mobile\PageActions\MainPage_ActionsClass.cs" />
+    <Compile Include="EA_Mobile\PageActions\OrderingFormPage_ActionClass.cs" />
+    <Compile Include="EA_Mobile\PageActions\PaymentMethodPage_ActionClass.cs" />
+    <Compile Include="EA_Mobile\PageActions\ServingStorePage_ActionClass.cs" />
+    <Compile Include="EA_Mobile\PageActions\SmartDivPage_ActionClass.cs" />
+    <Compile Include="EA_Mobile\PageObjects\ArrangementAddonPage.cs" />
+    <Compile Include="EA_Mobile\PageObjects\ArrangementDetailPage.cs" />
+    <Compile Include="EA_Mobile\PageObjects\ConfirmationPage.cs" />
+    <Compile Include="EA_Mobile\PageObjects\ContinueShoppingDiv.cs" />
+    <Compile Include="EA_Mobile\PageObjects\CreateProfilePage.cs" />
+    <Compile Include="EA_Mobile\PageObjects\FruitArrangementPage.cs" />
+    <Compile Include="EA_Mobile\PageObjects\FruitCartPage.cs" />
+    <Compile Include="EA_Mobile\PageObjects\HeaderPage.cs" />
+    <Compile Include="EA_Mobile\PageObjects\MainPage.cs" />
+    <Compile Include="EA_Mobile\PageObjects\OrderingFormPage.cs" />
+    <Compile Include="EA_Mobile\PageObjects\PaymentMethodPage.cs" />
+    <Compile Include="EA_Mobile\PageObjects\ServingStorePage.cs" />
+    <Compile Include="EA_Mobile\PageObjects\SmartDivPage.cs" />
+    <Compile Include="ExcelTestData\PickupDataset.cs" />
+    <Compile Include="MainExecution.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCases\EAMobileTestCases.cs" />
+    <Compile Include="TestCases\RegressionTestSuite\RegressionClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ExcelMobileSite.xlsx" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.10.1\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props'))" />
+    <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.2.38\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.2.38\build\Selenium.Chrome.WebDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.InternetExplorer.WebDriver.3.11.1\build\Selenium.InternetExplorer.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.InternetExplorer.WebDriver.3.11.1\build\Selenium.InternetExplorer.WebDriver.targets'))" />
+  </Target>
+  <Import Project="..\packages\Selenium.Chrome.WebDriver.2.38\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.2.38\build\Selenium.Chrome.WebDriver.targets')" />
+  <Import Project="..\packages\Selenium.InternetExplorer.WebDriver.3.11.1\build\Selenium.InternetExplorer.WebDriver.targets" Condition="Exists('..\packages\Selenium.InternetExplorer.WebDriver.3.11.1\build\Selenium.InternetExplorer.WebDriver.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
